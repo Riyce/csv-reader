@@ -1,4 +1,3 @@
-import base64
 import os
 
 from flask import Blueprint, render_template, request, send_file
