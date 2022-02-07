@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+src/media/new/*.csv
+src/media/upgraded/*.csv
+.idea/
