@@ -1,4 +1,5 @@
 import csv
+import os.path
 import socket
 from pathlib import Path
 from time import time
@@ -25,7 +26,7 @@ class CSVWorker:
 
 	def __init__(self, file) -> None:
 		self.file = file
-		self.filemane = file.split("/")[-1]
+		self.filename = os.path.basename(file)
 		self.nums = set()
 		self.nums_count = 0
 
@@ -105,7 +106,7 @@ class CSVWorker:
 		return row
 
 	def process(self) -> Path:
-		new_file = BASE_DIR.joinpath("media", "upgraded", self.filemane)
+		new_file = BASE_DIR.joinpath("media", "upgraded", self.filename)
 		with open(new_file, "w") as _:
 			pass
 		with open(self.file, mode="r", encoding="cp1251") as file:
